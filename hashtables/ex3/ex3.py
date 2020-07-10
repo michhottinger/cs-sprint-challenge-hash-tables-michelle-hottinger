@@ -3,6 +3,22 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    #below is the solution if rules did not prohibit set use:
+    #result = list(set.intersection(*map(set, arrays)))
+    dict_arr = {} #create a dictionary
+    result = [] #create a results list of the common numbers
+    lenth = len(arrays)
+    #save num in array to the dict so it can be called upon quickly
+    for arr in arrays:#for list of lists
+        for n in arr:#get number in list
+            if n not in dict_arr:#if number isn't in the dict
+                dict_arr[n] = 1#put it in at 1
+            else:
+                dict_arr[n] +=1#if its already in there, increment
+                
+    for n in dict_arr:#Now look over the dict and if its result is more than one
+        if dict_arr[n] == lenth:#add it to our results lists
+            result.append(n)
 
     return result
 
