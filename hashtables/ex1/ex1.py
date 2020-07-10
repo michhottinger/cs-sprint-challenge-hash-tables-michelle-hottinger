@@ -12,8 +12,8 @@ def get_indices_of_item_weights(weights, length, limit):
         if i not in hash:
             hash[i] = limit - i
         else:
-            hash[f'{i + 1}'] = limit - i
-     
+            hash[i + 1] = limit - i
+
     for i in hash:#loop through i and j in hash to see if they sum to limit
         for j in hash:
             if hash[i] + hash[j] == limit and i != j:
@@ -57,6 +57,7 @@ def get_indices_of_item_weights_normal(weights, length, limit):
     YOUR CODE HERE
     """
     # Your code here
+    rest_weight = limit - weight
     for idx, weight in enumerate(weights):
         for rest_idx, rest_weight in enumerate(weights):
             if rest_idx > idx and weight + rest_weight == limit:

@@ -7,7 +7,7 @@ def intersection(arrays):
     #result = list(set.intersection(*map(set, arrays)))
     dict_arr = {} #create a dictionary
     result = [] #create a results list of the common numbers
-    lenth = len(arrays)
+    length = len(arrays)
     #save num in array to the dict so it can be called upon quickly
     for arr in arrays:#for list of lists
         for n in arr:#get number in list
@@ -17,7 +17,7 @@ def intersection(arrays):
                 dict_arr[n] +=1#if its already in there, increment
                 
     for n in dict_arr:#Now look over the dict and if its result is more than one
-        if dict_arr[n] == lenth:#add it to our results lists
+        if dict_arr[n] == length:#add it to our results lists
             result.append(n)
 
     return result
